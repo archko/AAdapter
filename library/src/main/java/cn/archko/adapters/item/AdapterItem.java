@@ -11,7 +11,7 @@ import cn.archko.adapters.BaseViewHolder;
 /**
  * @author: archko 2019/5/30 :9:58
  */
-public abstract class AdapterItem {
+public abstract class AdapterItem<T> {
 
     protected LayoutInflater inflater;
 
@@ -19,21 +19,21 @@ public abstract class AdapterItem {
         inflater = LayoutInflater.from(context);
     }
 
-    public abstract BaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType);
+    public abstract BaseViewHolder<T> onCreateViewHolder(@NonNull ViewGroup parent, int viewType);
 
-    public <T extends IType> void onBind(BaseViewHolder viewHolder, IType tItemBean, int position) {
+    public void onBind(BaseViewHolder<T> viewHolder, T tItemBean, int position) {
         viewHolder.onBind(tItemBean, position);
     }
 
-    public void onViewRecycled(@NonNull BaseViewHolder holder) {
+    public void onViewRecycled(@NonNull BaseViewHolder<T> holder) {
 
     }
 
-    public void onViewAttachedToWindow(@NonNull BaseViewHolder holder) {
+    public void onViewAttachedToWindow(@NonNull BaseViewHolder<T> holder) {
 
     }
 
-    public void onViewDetachedFromWindow(@NonNull BaseViewHolder holder) {
+    public void onViewDetachedFromWindow(@NonNull BaseViewHolder<T> holder) {
 
     }
 

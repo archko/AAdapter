@@ -38,7 +38,7 @@ class TestItemFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         val adapter = TestAdapter(activity)
 
-        val list = ArrayList<IType<*>>()
+        val list = ArrayList<IType>()
         list.add(StringBean("LAKDFALDKFAKLDF"))
         list.add(StringBean("P0=2IP45M4TMASLDV"))
         list.add(StringBean(".M,ZCV-00-79X89ZV756"))
@@ -78,7 +78,7 @@ class TestItemFragment : Fragment() {
         recyclerView.adapter = adapter
     }
 
-    class TestAdapter(activity: Context?) : ItemAdapter<IType<*>>(activity) {
+    class TestAdapter(activity: Context?) : ItemAdapter<IType>(activity) {
         init {
             addAdapterItem(TestItem.TYPE, TestItem(activity))
             addAdapterItem(TestItem2.TYPE, TestItem2(activity))

@@ -13,7 +13,7 @@ import java.util.List;
  * @author: archko 2016/12/2 :18:19
  */
 
-public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<BaseViewHolder> {
+public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<BaseViewHolder<T>> {
 
     protected final LayoutInflater mInflater;
     protected List<T> mData;
@@ -43,7 +43,7 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<BaseVi
 
     public void addData(List<T> arrayList) {
         if (mData == null) {
-            mData = new ArrayList();
+            mData = new ArrayList<T>();
         }
         if (null != arrayList) {
             mData.addAll(arrayList);

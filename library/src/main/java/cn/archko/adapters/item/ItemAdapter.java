@@ -41,24 +41,24 @@ public class ItemAdapter<T extends IType> extends HeaderAndFooterRecyclerAdapter
     }
 
     @Override
-    protected void onBindNormalViewHolder(BaseViewHolder holder, int position, int realPosition) {
+    protected void onBindNormalViewHolder(BaseViewHolder<T> holder, int position, int realPosition) {
         delegateManager.onBindViewHolder(getData(), holder, realPosition);
     }
 
     @Override
-    public void onViewRecycled(@NonNull BaseViewHolder holder) {
+    public void onViewRecycled(@NonNull BaseViewHolder<T> holder) {
         super.onViewRecycled(holder);
         delegateManager.onViewRecycled(holder);
     }
 
     @Override
-    public void onViewAttachedToWindow(@NonNull BaseViewHolder holder) {
+    public void onViewAttachedToWindow(@NonNull BaseViewHolder<T> holder) {
         super.onViewAttachedToWindow(holder);
         delegateManager.onViewAttachedToWindow(holder);
     }
 
     @Override
-    public void onViewDetachedFromWindow(@NonNull BaseViewHolder holder) {
+    public void onViewDetachedFromWindow(@NonNull BaseViewHolder<T> holder) {
         super.onViewDetachedFromWindow(holder);
         delegateManager.onViewDetachedFromWindow(holder);
     }

@@ -32,7 +32,8 @@ android {
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
     api "androidx.core:core:${X_SUPPORT_COMPAT}"
-    api "androidx.fragment:fragment:${X_SUPPORT_FRAGMENT}"
+    api "androidx.fragment:fragment-ktx:${X_SUPPORT_FRAGMENT_KTX}"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     api "androidx.recyclerview:recyclerview:${X_SUPPORT_RECYCLERVIEW}"
 
     api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

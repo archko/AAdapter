@@ -1,8 +1,10 @@
 ext.deps = [:]
 ext.deps = deps
 
-def addRepos(RepositoryHandler handler) {
+static def addRepos(RepositoryHandler handler) {
     handler.maven { url 'https://maven.aliyun.com/repository/jcenter' }
+    handler.maven { url 'https://maven.aliyun.com/repository/public' }
+    handler.maven { url 'https://maven.aliyun.com/repository/google' }
     handler.maven { url 'https://dl.bintray.com/umsdk/release' }
     handler.google()
     handler.jcenter()

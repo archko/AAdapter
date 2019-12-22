@@ -14,7 +14,7 @@ import cn.archko.adapters.item.IType;
 /**
  * @author: archko 2019/5/30 :13:48
  */
-public class TestItem2 extends AdapterItem {
+public class TestItem2 extends AdapterItem<StringBean2> {
 
     public final static int TYPE = 2;
 
@@ -22,16 +22,16 @@ public class TestItem2 extends AdapterItem {
         super(context);
     }
 
-    public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BaseViewHolder<StringBean2> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         return new ViewHolder2(inflater.inflate(R.layout.test_viewholder2, parent, false));
     }
 
-    public <T extends IType> void onBind(BaseViewHolder viewHolder, IType tItemBean, int position) {
+    public void onBind(BaseViewHolder<StringBean2> viewHolder, StringBean2 tItemBean, int position) {
         viewHolder.onBind(tItemBean, position);
     }
 
-    class ViewHolder2 extends BaseViewHolder<StringBean2> {
+    static class ViewHolder2 extends BaseViewHolder<StringBean2> {
 
         TextView text;
 
