@@ -23,7 +23,7 @@ public class DelegateManager<T extends IType> {
     public void addAdapterItem(int viewType, AdapterItem<T> adapterItem) {
         AdapterItem<T> old = viewTypeMap.get(viewType);
         if (null != old) {
-            System.err.println("alread has the same type.");
+            System.err.println("alread has the same type." + viewType);
         }
         viewTypeMap.put(viewType, adapterItem);
     }
@@ -34,7 +34,7 @@ public class DelegateManager<T extends IType> {
     }
 
     public int getItemViewType(List<T> data, int position) {
-        IType itemBean = data.get(position);
+        T itemBean = data.get(position);
         int vt = itemBean.getViewType();
         AdapterItem<T> adapterItem = viewTypeMap.get(vt);
         if (null != adapterItem) {
@@ -49,15 +49,15 @@ public class DelegateManager<T extends IType> {
     }
 
     public void onViewRecycled(@NonNull BaseViewHolder<T> holder) {
-
+        holder.onViewRecycled();
     }
 
     public void onViewAttachedToWindow(@NonNull BaseViewHolder<T> holder) {
-
+        holder.onViewAttachedToWindow();
     }
 
     public void onViewDetachedFromWindow(@NonNull BaseViewHolder<T> holder) {
-
+        holder.onViewDetachedFromWindow();
     }
 
     public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
