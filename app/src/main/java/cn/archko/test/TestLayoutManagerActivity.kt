@@ -60,7 +60,7 @@ class TestLayoutManagerActivity : FragmentActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
         val adapter = object : BaseRecyclerAdapter<Bean>(this) {
-            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
+            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<Bean> {
                 val view = mInflater.inflate(R.layout.test_viewholder2, parent, false)
                 return ViewHolder(view)
             }
